@@ -309,11 +309,13 @@ add_library(PythonQt SHARED
   )
 set_target_properties(PythonQt PROPERTIES DEFINE_SYMBOL PYTHONQT_EXPORTS)
 
+target_include_directories(PythonQt PUBLIC ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/generated_cpp${generated_cpp_suffix} ) 
+
 target_compile_options(PythonQt PRIVATE
   $<$<CXX_COMPILER_ID:MSVC>:/bigobj>
   )
 
-target_link_libraries(PythonQt
+target_link_libraries(PythonQt PUBLIC
               ${PYTHON_LIBRARY}
               ${QT_LIBRARIES}
   )
