@@ -307,7 +307,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   )
 
-add_library(PythonQt SHARED
+add_library(PythonQt
             ${sources}
             ${gen_moc_sources}
   )
